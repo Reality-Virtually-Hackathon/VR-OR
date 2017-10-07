@@ -84,7 +84,9 @@ namespace UnityEngine
 
 			string[] list = message.Split(' ');
 
-			q = Quaternion.Euler (15-(Int32.Parse(list[0]) / 20f), 0, 0);
+			//q = Quaternion.Euler (15-(Int32.Parse(list[0]) / 20f), 0, 0);
+			//q = Quaternion.Euler (90, 0, 0);
+			q = Quaternion.Euler (0,-270*(Int32.Parse(list[0])) / 1024f, 0);
 
 			Debug.Log ("Test" + q);
 		}
