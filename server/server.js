@@ -1,40 +1,48 @@
 #!/bin/node
 
 /**
- * VR-OR
+ * Connector between Unity and Arduino
  *
  * @file server.js
  * @author Uwe Gruenefeld
- * @version 2017-10-06
+ * @version 2017-10-07
  **/
 
- // create objects
- var express = require('express')
- ,   app = express()
- ,   server = require('http').createServer(app)
- ,   io = require('socket.io').listen(server)
- ,   conf = require('./config.json');
+ var config		= require('./config.json');
 
- // bind port to server
- server.listen(conf.port);
+ /*
+  * Connection to Unity
+  */
+ var websocket = require("nodejs-websocket");
+ var unity	   = websocket.createServer(function(connection)
+ {
+ 	console.log("New socket connection");
 
- // static files
- app.use(express.static('./content/'));
+  // Handle event for incoming text
+  connection.on("text", function(message)
+  {
 
- // index file
- app.get('/', function (req, res) {
- 	res.sendfile('./content/index.htm');
- });
+  }
 
- // data management
- io.sockets.on('connection', function (socket) {
+  // Handle event for close connection
+	connection.on("close", function()
+	{
+		console.log("Socket connection closed");
+	});
+});
+unity.listen(config.port);
+console.log('Unity connection is running on ws://localhost:' + config.unityPort + '/');
 
- 	// get of variable
- 	socket.on('data', function(data) {
-
-
- 	});
- });
-
- // status
- console.log('Server is running http://localhost:' + conf.port + '/');
+/*
+ * Connection to Arduino
+ */
+var serial    = require("serialport").SerialPort;
+var arduino   = new SerialPort("/dev/tty.usbmodem" + config.arduinoPort);
+arduino.on('open', function()
+{
+  arduino.on('data', function(data)
+	{
+      console.log(data[0]);
+  });
+});
+console.log('Arduino connection is running on http://localhost:' + conf.arduinoPort + '/');

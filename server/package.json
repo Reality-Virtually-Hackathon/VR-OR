@@ -1,9 +1,17 @@
 {
-	"name": "VR-OR",
-	"description": "Server that handles our application",
-	"author": "Uwe Gruenefeld",
+	"name": "VR-OR Server",
+	"description": "Server that connects Arduino with Unity",
+	"author": "Uwe Gruenefeld <info@uwe-gruenefeld.de>",
+	"license": "MIT",
 	"dependencies": {
-		"express": "3.x",
-		"socket.io": "*"
+		"nodejs-websocket": "*",
+		"serialport": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Reality-Virtually-Hackathon/VR-OR"
+	},
+	"bugs": {
+		"url": "https://github.com/Reality-Virtually-Hackathon/VR-OR/issues"
 	}
 }

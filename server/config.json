@@ -1,4 +1,4 @@
 {
-	"port" : 8080,
-	"debug": false
+	"unityPort" 	: 8080,
+	"arduinoPort"	:	1421
 }
