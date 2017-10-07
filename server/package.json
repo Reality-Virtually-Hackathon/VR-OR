@@ -1,5 +1,5 @@
 {
-	"name": "VR-OR Server",
+	"name": "VR-OR_Server",
 	"description": "Server that connects Arduino with Unity",
 	"author": "Uwe Gruenefeld <info@uwe-gruenefeld.de>",
 	"license": "MIT",
