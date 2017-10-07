@@ -1,4 +1,16 @@
 {
-	"unityPort" 	: 8080,
-	"arduinoPort"	:	1421
+	"debug"		: true,
+	"unity"		:
+	{
+		"active"	:	true,
+		"fake"		: false,
+		"port"		: 8080
+	},
+	"arduino"	:
+	{
+		"active"	: true,
+		"fake"		: true,
+		"port"		: 1421,
+		"servo"		: 1024
+	}
 }
