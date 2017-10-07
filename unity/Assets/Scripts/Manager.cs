@@ -16,10 +16,15 @@ public class Manager : MonoBehaviour {
 		arm1.transform.localScale = new Vector3 (1, arm1Length, 1);
 
 		arm1.transform.position = new Vector3 (0, arm1Length, 0);
+
+
+
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+
 	}
 }
