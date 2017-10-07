@@ -21,10 +21,14 @@ namespace UnityEngine
 
 		// Variables for websocket connection
 		private WebSocket webSocket;
+		GameObject obj;
+		Quaternion q;
 
 		// Use this for initialization
 		void Start () {
-			
+			obj = GameObject.Find ("arm1_ghost");
+			q = obj.transform.localRotation;
+
 		}
 		
 		/// <summary>
@@ -35,6 +39,8 @@ namespace UnityEngine
 			// Check connection
 			if (!this.ProcessConnection ())
 				return;
+
+			obj.transform.localRotation = q;
 		}
 
 		/// <summary>
@@ -73,7 +79,14 @@ namespace UnityEngine
 		// Handling a response
 		private void Response(string message)
 		{
+			Debug.Log ("BLA");
 			Debug.Log ("Recieved: " + message);
+
+			string[] list = message.Split(' ');
+
+			q = Quaternion.Euler (15-(Int32.Parse(list[0]) / 20f), 0, 0);
+
+			Debug.Log ("Test" + q);
 		}
 	}
 }

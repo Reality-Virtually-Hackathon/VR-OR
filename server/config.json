@@ -3,12 +3,12 @@
 	"unity"		:
 	{
 		"active"	:	true,
-		"fake"		: true,
+		"fake"		: false,
 		"port"		: 8080
 	},
 	"arduino"	:
 	{
-		"active"	: false,
+		"active"	: true,
 		"fake"		: true,
 		"port"		: 1421,
 		"servo"		: 1024
