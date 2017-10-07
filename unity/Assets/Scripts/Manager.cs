@@ -11,30 +11,29 @@ public class Manager : MonoBehaviour {
 	public float arm1Arm2Angle;
 	public float baseArm1Angle;
 	public float arm2ScalpelAngle;
+
+
+
+
 	// Use this for initialization
 	void Start () {
-		arm1Length = 1;
-		arm2Length = 1;
-		baseArm1Angle = 0;
-		arm1Arm2Angle = 0;
-		arm2ScalpelAngle = 45;
-
-
 		GameObject arm1 = GameObject.Find ("arm1");
 		GameObject arm2 = GameObject.Find ("arm2");
 		GameObject scalpel = GameObject.Find ("scalpel");
 		GameObject Base = GameObject.Find ("base");
 
+		arm1Length = 1;
+		arm2Length = 1;
+		baseArm1Angle = 45;
+		arm1Arm2Angle = -45;
+		arm2ScalpelAngle = -50;
+
+
+
+
+		//Allow for the change of the arm length
 		arm1.transform.localScale = new Vector3 (1, arm1Length, 1);
-
 		arm1.transform.position = new Vector3 (0, arm1Length, 0);
-
-
-
-
-		//GameObject lena = GameObject.Find ("lena");
-		//lena.transform.RotateAround (new Vector3 (0, 0, 0), new Vector3 (1, 0, 0), 45);
-
 
 
 		//rotations
@@ -52,8 +51,32 @@ public class Manager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		GameObject arm1 = GameObject.Find ("arm1");
+		Debug.Log (arm1.transform.rotation);
+		arm1.transform.rotation = Quaternion.Euler(baseArm1Angle, 0, 0);
+		Debug.Log (arm1.transform.rotation);
+
+
+		//Vector3 BaseRotationPoint = new Vector3(RotationPointArm1.transform.position.x, RotationPointArm1.transform.position.y, RotationPointArm1.transform.position.z);
+
 		//GameObject arm1 = GameObject.Find ("arm1");
-		//Debug.Log (arm1.transform.position);
+
+		//arm1.transform.localRotation = (baseArm1Angle,0,0);
+//		GameObject arm1 = GameObject.Find ("arm1");
+//		GameObject arm2 = GameObject.Find ("arm2");
+//		GameObject scalpel = GameObject.Find ("scalpel");
+	
+//
+//		//Rotations
+//		
+//		Vector3 arm2RotationPoint = new Vector3 (arm1.transform.position.x, arm1.transform.position.y+arm1.transform.localScale.y, arm1.transform.position.z);
+//		Vector3 scalpelRotationPoint = new Vector3 (arm2.transform.position.x, arm2.transform.position.y+arm2.transform.localScale.y, arm2.transform.position.z);
+//
+//		arm1.transform.RotateAround (BaseRotationPoint,new Vector3 (1, 0, 0), baseArm1Angle);
+//		arm2.transform.RotateAround (arm2RotationPoint,new Vector3 (1, 0, 0), arm1Arm2Angle);
+//		scalpel.transform.RotateAround (scalpelRotationPoint,new Vector3 (1, 0, 0), arm2ScalpelAngle);
+//
+		//
+
 	}
 }
