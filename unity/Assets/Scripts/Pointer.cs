@@ -56,10 +56,13 @@ namespace MagicTool
 			float distance = Vector3.Distance (sphere.transform.position, gameObject.transform.GetChild(0).position);
 
 			// Based on distance create force feedback
-			if (distance < sphere.GetComponent<CubeSphere> ().radius)
+			if (distance < sphere.GetComponent<CubeSphere> ().radius * sphere.transform.localScale.x) {
 				((NetworkController)controller.GetComponent<NetworkController> ()).Request (100, 100, 100);
-			else
+				//Debug.Log ("100");
+			} else {
 				((NetworkController)controller.GetComponent<NetworkController> ()).Request (0, 0, 0);
+				//Debug.Log ("0");
+			}
 
 			//Debug.Log (distance);
 

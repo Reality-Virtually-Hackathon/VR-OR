@@ -55,6 +55,9 @@ namespace MagicTool
 		/// </summary>
 		void Update () 
 		{
+			if (!this.armA_anchor || !this.armB_anchor)
+				return;
+
 			this.armA_anchor.transform.rotation = Quaternion.Euler (angle2, angle1, 0);
 			this.armB_anchor.transform.rotation = Quaternion.Euler (angle3, 0, 0);
 		}

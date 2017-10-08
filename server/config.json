@@ -9,8 +9,9 @@
 	"arduino"	:
 	{
 		"active"	: true,
-		"fake"		: true,
-		"port"		: 14611,
-		"servo"		: 1024
+		"fake"		: false,
+		"port"		: 1421,
+		"pot"			: 1024,
+		"servo"		: 100
 	}
 }

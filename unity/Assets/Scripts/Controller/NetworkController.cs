@@ -44,8 +44,8 @@ namespace MagicTool
 		void Update () 
 		{
 			// Check connection
-			if (!this.ProcessConnection ())
-				return;
+			//if (!this.ProcessConnection ())
+			//	return;
 		}
 
 		/// <summary>
@@ -66,6 +66,7 @@ namespace MagicTool
 				{
 					// Connect to the server
 					this.webSocket.Connect ();
+
 
 					// Method for handling incoming messages
 					this.webSocket.OnMessage += (sender, message) => this.Response (message.Data);
@@ -111,7 +112,10 @@ namespace MagicTool
 			fC = forceC;
 
 			String message = fA + ";" + fB + ";" + fC + "\n";
+
+			this.ProcessConnection ();
 			this.webSocket.Send (message);
+			this.webSocket.Close ();
 			//Debug.Log ("Requested: " + message);
 		}
 	}

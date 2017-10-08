@@ -8,8 +8,10 @@
  * @version 2017-10-07
  **/
 
+console.log("Please assign 192.168.43.200 to ur computer an connect to Hotspot.")
+
 var config = require('./config.json');
-var msg = null;
+var msgFromUnity = null, msgFromArduino = null;
 
 /*
  * Connection to Unity
@@ -21,7 +23,7 @@ if(config.unity.active) {
       console.log("New socket connection");
 
     function rand() {
-      return Math.floor(Math.random() * config.arduino.servo);
+      return Math.floor(Math.random() * config.arduino.pot);
     }
 
     function loop() {
@@ -29,9 +31,9 @@ if(config.unity.active) {
       try {
         if(config.unity.fake)
           connection.sendText(rand() + ' ' + rand() + ' ' + rand());
-        else if(msg != null) {
-          connection.sendText(String(msg));
-          msg = null;
+        else if(msgFromArduino != null) {
+          connection.sendText(String(msgFromArduino));
+          msgFromArduino = null;
         }
         setTimeout(loop, 100);
       } catch(exc) {}
@@ -40,7 +42,9 @@ if(config.unity.active) {
 
     // Handle event for incoming text
     connection.on("text", function(message) {
-      // TODO
+      if(config.debug)
+        console.log("Unity: " + message);
+      msgFromUnity = message;
     });
 
     // Handle event for close connection
@@ -65,9 +69,27 @@ if(config.arduino.active) {
   port.pipe(parser);
   parser.on('data', function(data) {
     if(config.debug)
-      console.log(data);
+      console.log("Arduino: " + data);
     msg = data;
   });
+
+  function rand() {
+    return Math.floor(Math.random() * config.arduino.servo);
+  }
+
+  function loop() {
+    // Fake it till you make it
+    try {
+      if(config.arduino.fake)
+        connection.sendText(rand() + ' ' + rand() + ' ' + rand());
+      else if(msgFromUnity != null) {
+        connection.sendText(String(msgFromUnity));
+        msgFromUnity = null;
+      }
+      setTimeout(loop, 100);
+    } catch(exc) {}
+  }
+  loop();
 
   if(config.debug)
     console.log('Arduino connection is running on /dev/tty.usbmodem' + config.arduino.port);
