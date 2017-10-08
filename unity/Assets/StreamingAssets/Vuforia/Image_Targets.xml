@@ -4,9 +4,9 @@
         <ImageTarget name="chips" size="1.000000 0.700000"/>
         <ImageTarget name="stones_hires" size="50.000000 35.000000"/>
         <ImageTarget name="cube.Front" size="1.000000 1.000000"/>
+        <ImageTarget name="cube.Top" size="1.000000 1.000000"/>
         <ImageTarget name="cube.Left" size="1.000000 1.000000"/>
         <ImageTarget name="cube.Right" size="1.000000 1.000000"/>
-        <ImageTarget name="cube.Top" size="1.000000 1.000000"/>
         <ImageTarget name="cube.Back" size="1.000000 1.000000"/>
         <MultiTarget name="cube">
             <Part name="cube.Left" translation="-0.5 0 0" rotation="AD: 0 1 0 -90"/>
