@@ -111,7 +111,7 @@ namespace MagicTool
 			fB = forceB;
 			fC = forceC;
 
-			String message = fA + ";" + fB + ";" + fC + "\n";
+			String message = fA + " " + fB + " " + fC + "\n";
 
 			this.ProcessConnection ();
 			this.webSocket.Send (message);
