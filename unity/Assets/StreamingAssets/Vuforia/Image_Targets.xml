@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <ImageTarget name="chips" size="1.000000 0.700000"/>
+        <ImageTarget name="stones_hires" size="50.000000 35.000000"/>
+        <ImageTarget name="cube.Front" size="1.000000 1.000000"/>
+        <ImageTarget name="cube.Left" size="1.000000 1.000000"/>
+        <ImageTarget name="cube.Right" size="1.000000 1.000000"/>
+        <ImageTarget name="cube.Top" size="1.000000 1.000000"/>
+        <ImageTarget name="cube.Back" size="1.000000 1.000000"/>
+        <MultiTarget name="cube">
+            <Part name="cube.Left" translation="-0.5 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="cube.Right" translation="0.5 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="cube.Front" translation="0 0 0.5" rotation="AD: 1 0 0 0"/>
+            <Part name="cube.Back" translation="0 0 -0.5" rotation="AD: 0 1 0 180"/>
+            <Part name="cube.Top" translation="0 0.5 0" rotation="AD: 1 0 0 -90"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>
