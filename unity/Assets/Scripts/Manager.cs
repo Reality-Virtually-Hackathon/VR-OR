@@ -13,8 +13,6 @@ public class Manager : MonoBehaviour {
 	public float scalpelAngle;
 
 
-
-
 	// Use this for initialization
 	void Start () {
 		GameObject arm1 = GameObject.Find ("arm1");
@@ -25,7 +23,7 @@ public class Manager : MonoBehaviour {
 
 
 
-		Debug.Log ("This line is running");
+		Debug.Log ("THIS line is running");
 
 
 		//Rotations
@@ -64,7 +62,7 @@ public class Manager : MonoBehaviour {
 		arm2R.transform.localRotation = Quaternion.Euler (0,arm2Angle, 0);
 
 		//Restore all to original sizes
-		Debug.Log(scalpelR.transform.localScale);
+		//Debug.Log(scalpelR.transform.localScale);
 		//arm2.transform.localScale = new Vector3 (0.1f, arm2Length, 0.1f);
 		//arm2.transform.position = new Vector3 (0, arm2Length, 0);
 		//Vector3 BaseRotationPoint = new Vector3(RotationPointArm1.transform.position.x, RotationPointArm1.transform.position.y, RotationPointArm1.transform.position.z);
@@ -89,4 +87,7 @@ public class Manager : MonoBehaviour {
 		//
 
 	}
+
+
+
 }
