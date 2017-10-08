@@ -1,7 +1,7 @@
 ﻿/**
  * MIT License
  *
- * Copyright (c) 2017 Mo Kakwan, Uwe Gruenefeld, Helena Deus, Michal Leszczynski, Alisha Haris
+ * Copyright (c) 2017 Mo Kakwan, Uwe Gruenefeld, Helena Deus, Michal Leszczynski, Alisha Harris
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ using System;
 
 namespace MagicTool
 {
-	public class Pointer : MonoBehaviour 
+	public class Pointer : MonoBehaviour
 	{
 		[HeaderAttribute("Reference to Controller")]
 		public GameObject controller;
@@ -47,7 +47,7 @@ namespace MagicTool
 		/// <summary>
 		/// Update is called once per frame by Unity
 		/// </summary>
-		void Update() 
+		void Update()
 		{
 			if (!deformer)
 				return;
@@ -79,7 +79,7 @@ namespace MagicTool
 
 			if (!collider)
 				return;
-	
+
 			if(collider.Raycast(ray, out hit, Int32.MaxValue))
 			{
 				MeshDeformer deformer = sphere.GetComponent<MeshDeformer> ();
@@ -96,4 +96,3 @@ namespace MagicTool
 		}
 	}
 }
-	

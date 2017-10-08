@@ -1,7 +1,7 @@
 ﻿/**
  * MIT License
  *
- * Copyright (c) 2017 Mo Kakwan, Uwe Gruenefeld, Helena Deus, Michal Leszczynski, Alisha Haris
+ * Copyright (c) 2017 Mo Kakwan, Uwe Gruenefeld, Helena Deus, Michal Leszczynski, Alisha Harris
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,11 +37,11 @@ namespace MagicTool
 		private WebSocket webSocket;
 		[HideInInspector]
 		public Vector3 rotation;
-		
+
 		/// <summary>
 		/// Update is called once per frame by Unity
 		/// </summary>
-		void Update () 
+		void Update ()
 		{
 			// Check connection
 			//if (!this.ProcessConnection ())
@@ -71,7 +71,7 @@ namespace MagicTool
 					// Method for handling incoming messages
 					this.webSocket.OnMessage += (sender, message) => this.Response (message.Data);
 				}
-				catch(Exception exception) 
+				catch(Exception exception)
 				{
 					// Something went wrong
 					Debug.Log (exception);

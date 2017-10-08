@@ -1,7 +1,7 @@
 ﻿/**
  * MIT License
  *
- * Copyright (c) 2017 Mo Kakwan, Uwe Gruenefeld, Helena Deus, Michal Leszczynski, Alisha Haris
+ * Copyright (c) 2017 Mo Kakwan, Uwe Gruenefeld, Helena Deus, Michal Leszczynski, Alisha Harris
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@ using System.Collections.Generic;
 
 namespace MagicTool
 {
-	public class RoboticController : MonoBehaviour 
+	public class RoboticController : MonoBehaviour
 	{
 		[Header("Arm Controller")]
 		public float angle1;
@@ -41,7 +41,7 @@ namespace MagicTool
 		/// <summary>
 		/// Start is called once at startup
 		/// </summary>
-		void Start () 
+		void Start ()
 		{
 			this.armA = GameObject.Find ("ArmA");
 			this.armB = GameObject.Find ("ArmB");
@@ -53,7 +53,7 @@ namespace MagicTool
 		/// <summary>
 		/// Update is called once per frame by Unity
 		/// </summary>
-		void Update () 
+		void Update ()
 		{
 			if (!this.armA_anchor || !this.armB_anchor)
 				return;
