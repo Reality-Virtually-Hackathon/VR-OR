@@ -119,11 +119,11 @@ void parseResponse(String serialResponse) {
   String ten2 = getValue(serialResponse, ' ', 1);
   String ten3 = getValue(serialResponse, ' ', 2);
 
-  /*
+  
   SetTensionServo(0, ten1.toInt());
   SetTensionServo(1, ten2.toInt());
   SetTensionServo(2, ten3.toInt());
-  */
+  
   
 }
 
